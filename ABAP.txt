@@ -1,0 +1,590 @@
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hello world
+
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    out->write( 'Hello World!' ).
+    out->write( 'Welcome to SAP ABAP Cloud.' ).
+    out->write( 'This is my first ABAP program.' ).
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+variables
+
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    " Variable Declaration
+    DATA:
+      lv_name       TYPE string VALUE 'Indranil Bakshi',
+      lv_age        TYPE i VALUE 26,
+      lv_department TYPE string VALUE 'AI & ML',
+      lv_salary     TYPE p LENGTH 8 DECIMALS 2 VALUE '65000.00',
+      lv_city       TYPE string VALUE 'Bangalore'.
+
+    out->write( '===== Employee Details =====' ).
+
+    out->write( |Name       : { lv_name }| ).
+    out->write( |Age        : { lv_age }| ).
+    out->write( |Department : { lv_department }| ).
+    out->write( |Salary     : { lv_salary }| ).
+    out->write( |City       : { lv_city }| ).
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+operators
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA:
+      lv_num1   TYPE i VALUE 20,
+      lv_num2   TYPE i VALUE 10,
+      lv_result TYPE i.
+
+    out->write( '===== ARITHMETIC OPERATORS =====' ).
+
+    " Addition
+    lv_result = lv_num1 + lv_num2.
+    out->write( |20 + 10 = { lv_result }| ).
+
+    " Subtraction
+    lv_result = lv_num1 - lv_num2.
+    out->write( |20 - 10 = { lv_result }| ).
+
+    " Multiplication
+    lv_result = lv_num1 * lv_num2.
+    out->write( |20 * 10 = { lv_result }| ).
+
+    " Division
+    lv_result = lv_num1 / lv_num2.
+    out->write( |20 / 10 = { lv_result }| ).
+
+    out->write( ' ' ).
+    out->write( '===== COMPARISON OPERATORS =====' ).
+
+    IF lv_num1 = lv_num2.
+      out->write( 'Both numbers are Equal' ).
+    ELSE.
+      out->write( 'Both numbers are NOT Equal' ).
+    ENDIF.
+
+    IF lv_num1 > lv_num2.
+      out->write( '20 is Greater than 10' ).
+    ENDIF.
+
+    IF lv_num1 < lv_num2.
+      out->write( '20 is Less than 10' ).
+    ELSE.
+      out->write( '20 is NOT Less than 10' ).
+    ENDIF.
+
+    out->write( ' ' ).
+    out->write( '===== LOGICAL OPERATORS =====' ).
+
+    DATA:
+      lv_age TYPE i VALUE 26,
+      lv_salary TYPE p LENGTH 8 DECIMALS 2 VALUE '65000'.
+
+    IF lv_age >= 18 AND lv_salary >= 50000.
+      out->write( 'Eligible for Premium Employee Benefits' ).
+    ENDIF.
+
+    IF lv_age < 18 OR lv_salary < 50000.
+      out->write( 'Not Eligible' ).
+    ELSE.
+      out->write( 'Eligibility Criteria Satisfied' ).
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+DO LOOPS
+
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA lv_count TYPE i.
+
+    out->write( '===== DO LOOP =====' ).
+
+    DO 10 TIMES.
+
+      lv_count = sy-index.
+
+      out->write( |Iteration Number : { lv_count }| ).
+
+    ENDDO.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+while loops
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA lv_count TYPE i VALUE 1.
+
+    out->write( '===== WHILE LOOP =====' ).
+
+    WHILE lv_count <= 5.
+
+      out->write(
+      |Current Number : { lv_count }|
+      ).
+
+      lv_count = lv_count + 1.
+
+    ENDWHILE.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+
+create internal table
+
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA:
+      lt_employee TYPE TABLE OF zemploye,
+      ls_employee TYPE zemploye.
+
+    " Employee 1
+    ls_employee-emp_id = '1001'.
+    ls_employee-name = 'Indranil'.
+    ls_employee-department = 'AI & ML'.
+    ls_employee-salary = '65000'.
+    ls_employee-city = 'Bangalore'.
+
+    APPEND ls_employee TO lt_employee.
+
+    " Employee 2
+    CLEAR ls_employee.
+
+    ls_employee-emp_id = '1002'.
+    ls_employee-name = 'Rahul'.
+    ls_employee-department = 'HR'.
+    ls_employee-salary = '55000'.
+    ls_employee-city = 'Delhi'.
+
+    APPEND ls_employee TO lt_employee.
+
+    out->write( 'Employees Added Successfully!' ).
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+display internal table
+
+
+METHOD if_oo_adt_classrun~main.
+
+  DATA:
+    lt_employee TYPE TABLE OF zemploye,
+    ls_employee TYPE zemploye.
+
+  ls_employee-emp_id = '1001'.
+  ls_employee-name = 'Indranil'.
+  ls_employee-department = 'AI & ML'.
+  ls_employee-salary = '65000'.
+  ls_employee-city = 'Bangalore'.
+
+  APPEND ls_employee TO lt_employee.
+
+  CLEAR ls_employee.
+
+  ls_employee-emp_id = '1002'.
+  ls_employee-name = 'Rahul'.
+  ls_employee-department = 'HR'.
+  ls_employee-salary = '55000'.
+  ls_employee-city = 'Delhi'.
+
+  APPEND ls_employee TO lt_employee.
+
+  out->write( '===== Employee List =====' ).
+
+  LOOP AT lt_employee INTO ls_employee.
+
+    out->write(
+      |ID: { ls_employee-emp_id } Name: { ls_employee-name } Department: { ls_employee-department } Salary: { ls_employee-salary } City: { ls_employee-city }|
+    ).
+
+  ENDLOOP.
+
+ENDMETHOD.
+
+
+
+structure
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA ls_employee TYPE zemploye.
+
+    ls_employee-emp_id = '1001'.
+    ls_employee-name = 'Indranil'.
+    ls_employee-department = 'AI & ML'.
+    ls_employee-salary = '65000.00'.
+    ls_employee-city = 'Bangalore'.
+
+    out->write( '===== Employee Details =====' ).
+
+    out->write( |ID         : { ls_employee-emp_id }| ).
+    out->write( |Name       : { ls_employee-name }| ).
+    out->write( |Department : { ls_employee-department }| ).
+    out->write( |Salary     : { ls_employee-salary }| ).
+    out->write( |City       : { ls_employee-city }| ).
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+own structure
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    TYPES:
+      BEGIN OF ty_student,
+        student_id TYPE i,
+        name       TYPE string,
+        course     TYPE string,
+        cgpa       TYPE p LENGTH 4 DECIMALS 2,
+      END OF ty_student.
+
+    DATA ls_student TYPE ty_student.
+
+    ls_student-student_id = 101.
+    ls_student-name = 'Rahul'.
+    ls_student-course = 'Computer Science'.
+    ls_student-cgpa = '8.75'.
+
+    out->write( '===== Student Details =====' ).
+
+    out->write( |Student ID : { ls_student-student_id }| ).
+    out->write( |Name       : { ls_student-name }| ).
+    out->write( |Course     : { ls_student-course }| ).
+    out->write( |CGPA       : { ls_student-cgpa }| ).
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+INSERT
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA ls_employee TYPE zemploye.
+
+    ls_employee-emp_id      = '1002'.
+    ls_employee-name        = 'Indranil'.
+    ls_employee-department  = 'AI & ML'.
+    ls_employee-salary      = '65000.00'.
+    ls_employee-city        = 'Bangalore'.
+
+    INSERT zemploye FROM @ls_employee.
+
+    IF sy-subrc = 0.
+      out->write( 'Employee Inserted Successfully!' ).
+    ELSE.
+      out->write( 'Employee Already Exists!' ).
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+READ single
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA ls_employee TYPE zemploye.
+
+    SELECT SINGLE *
+      FROM zemploye
+      WHERE emp_id = '1001'
+      INTO @ls_employee.
+
+    IF sy-subrc = 0.
+
+      out->write( '===== Employee Details =====' ).
+
+      out->write( |ID         : { ls_employee-emp_id }| ).
+      out->write( |Name       : { ls_employee-name }| ).
+      out->write( |Department : { ls_employee-department }| ).
+      out->write( |Salary     : { ls_employee-salary }| ).
+      out->write( |City       : { ls_employee-city }| ).
+
+    ELSE.
+
+      out->write( 'Employee Not Found!' ).
+
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+read all
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    DATA:
+      lt_employee TYPE TABLE OF zemploye,
+      ls_employee TYPE zemploye.
+
+    SELECT *
+      FROM zemploye
+      INTO TABLE @lt_employee.
+
+    IF sy-subrc = 0.
+
+      out->write( '===== Employee List =====' ).
+
+      LOOP AT lt_employee INTO ls_employee.
+
+        out->write(
+        |ID:{ ls_employee-emp_id } Name:{ ls_employee-name } Department:{ ls_employee-department } Salary:{ ls_employee-salary } City:{ ls_employee-city }|
+        ).
+
+      ENDLOOP.
+
+    ELSE.
+
+      out->write( 'No Employee Found!' ).
+
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+update
+CLASS zcl_helloworld01 DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC.
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+ENDCLASS.
+
+
+
+CLASS zcl_helloworld01 IMPLEMENTATION.
+
+  METHOD if_oo_adt_classrun~main.
+
+    UPDATE zemploye
+      SET salary = '85000.00'
+      WHERE emp_id = '1001'.
+
+    IF sy-subrc = 0.
+
+      out->write( 'Salary Updated Successfully!' ).
+
+    ELSE.
+
+      out->write( 'Employee Not Found!' ).
+
+    ENDIF.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+
+
+
